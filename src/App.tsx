@@ -173,19 +173,8 @@ export default function App() {
               </motion.a>
             </div>
 
-            {/* Mobile: CTA Button + Menu Button */}
-            <div className="flex items-center gap-2 lg:hidden">
-              {/* Mobile CTA Button */}
-              <motion.a
-                href="#athletes"
-                whileTap={{ scale: 0.95 }}
-                className="px-3 py-2 bg-gradient-to-r from-[#c41e3a] to-[#8b1526] text-white text-xs sm:text-sm font-bold rounded-lg transition-all shadow-md flex items-center gap-1.5 whitespace-nowrap"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Register
-                <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
-              </motion.a>
-              
+            {/* Mobile: Menu Button Only */}
+            <div className="flex items-center lg:hidden">
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
