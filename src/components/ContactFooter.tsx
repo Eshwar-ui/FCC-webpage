@@ -30,9 +30,9 @@ export function ContactFooter({
     <>
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] relative overflow-hidden">
-        {/* Logo Watermark */}
-        <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 opacity-[0.03] pointer-events-none">
-          <img src={logo} alt="" className="w-[600px] h-[600px] object-contain" />
+        {/* Logo Watermark - Mobile Only (No Glows) */}
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 opacity-[0.08] md:opacity-[0.03] pointer-events-none flex items-center justify-center">
+          <img src={logo} alt="" loading="lazy" className="w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] md:w-[600px] md:h-[600px] object-contain" />
         </div>
 
         {/* Animated Energy */}

@@ -21,14 +21,14 @@ export function Shop({ logo }: ShopProps) {
       id="shop" 
       className="py-20 md:py-28 bg-gradient-to-b from-[#0a0a0a] via-[#0f0f0f] to-[#1a1a1a] relative overflow-hidden"
     >
-      {/* Logo Watermark */}
+      {/* Logo Watermark - Mobile Only (No Glows) */}
       {logo && (
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-[0.02] pointer-events-none">
-          <img src={logo} alt="" className="w-[500px] h-[500px] object-contain" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.08] md:opacity-[0.02] pointer-events-none flex items-center justify-center">
+          <img src={logo} alt="" loading="lazy" className="w-[350px] h-[350px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] object-contain" />
         </div>
       )}
 
-      {/* Animated Background Glows */}
+      {/* Animated Background Glows - Desktop Only */}
       <motion.div
         animate={{
           scale: [1, 1.2, 1],
@@ -39,7 +39,7 @@ export function Shop({ logo }: ShopProps) {
           repeat: Infinity,
           ease: "easeInOut"
         }}
-        className="absolute top-1/4 left-0 w-96 h-96 bg-[#d4af37] rounded-full blur-[160px] pointer-events-none"
+        className="hidden md:block absolute top-1/4 left-0 w-96 h-96 bg-[#d4af37] rounded-full blur-[160px] pointer-events-none"
       />
       <motion.div
         animate={{
@@ -52,7 +52,7 @@ export function Shop({ logo }: ShopProps) {
           ease: "easeInOut",
           delay: 2
         }}
-        className="absolute bottom-1/4 right-0 w-96 h-96 bg-[#c41e3a] rounded-full blur-[160px] pointer-events-none"
+        className="hidden md:block absolute bottom-1/4 right-0 w-96 h-96 bg-[#c41e3a] rounded-full blur-[160px] pointer-events-none"
       />
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

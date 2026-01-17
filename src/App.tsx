@@ -2,13 +2,14 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { 
   Menu, X, Trophy, Users, GraduationCap, Target, TrendingUp, Award,
-  ChevronRight, Phone, Mail, 
+  ChevronRight, Phone, Mail, ArrowRight,
   Building2, Dumbbell, Shield, Zap, Star, CheckCircle2
 } from 'lucide-react';
 import { ImageWithFallback } from './components/figma/ImangeWithFallback';
 import { ContactFooter } from './components/ContactFooter';
+import { Hero } from './components/Hero';
 import { Shop } from './components/shop';
-import { logo, eventImages } from './assets';
+import { logo, eventImages, featureImages } from './assets';
 
 // Event images from centralized assets
 const event1Image = eventImages.deadlift;
@@ -50,7 +51,7 @@ function EventModal({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+      className="fixed inset-0 bg-black/95 md:backdrop-blur-sm z-50 flex items-center justify-center p-4"
       onClick={() => setIsOpen(false)}
     >
       {/* Previous Arrow - Large touch target for accessibility */}
@@ -58,8 +59,8 @@ function EventModal({
         <motion.button
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.98 }}
           onClick={(e) => { e.stopPropagation(); onPrev(); }}
           aria-label="Previous event"
           className="absolute left-2 sm:left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] hover:from-[#c41e3a] hover:to-[#8b1526] border-3 border-[#d4af37] rounded-full flex items-center justify-center text-[#d4af37] hover:text-white transition-all shadow-xl shadow-black/50 focus:outline-none focus:ring-4 focus:ring-[#d4af37]/50"
@@ -73,8 +74,8 @@ function EventModal({
         <motion.button
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.95 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.98 }}
           onClick={(e) => { e.stopPropagation(); onNext(); }}
           aria-label="Next event"
           className="absolute right-2 sm:right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-14 h-14 sm:w-16 sm:h-16 md:w-18 md:h-18 lg:w-20 lg:h-20 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] hover:from-[#c41e3a] hover:to-[#8b1526] border-3 border-[#d4af37] rounded-full flex items-center justify-center text-[#d4af37] hover:text-white transition-all shadow-xl shadow-black/50 focus:outline-none focus:ring-4 focus:ring-[#d4af37]/50"
@@ -208,7 +209,7 @@ export default function App() {
       title: "Deadlift for Reps",
       image: event1Image,
       details: [
-        { label: "Weight", value: "80 kg for maximum repetitions" },
+        { label: "Weight", value: "150 kg for maximum repetitions" },
         { label: "Duration", value: "60 seconds" },
         { label: "Rules", value: "Full lockout at top, controlled descent" },
         { label: "Scoring", value: "1 point per valid rep" }
@@ -268,21 +269,25 @@ export default function App() {
       <nav className="fixed top-0 w-full bg-black/95 backdrop-blur-md z-40 border-b border-[#2a2a2a]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16 sm:h-20">
-            {/* Logo */}
+            {/* Logo with Brand Name - Always Visible */}
             <motion.a 
               href="#home"
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
-              className="flex items-center gap-2 sm:gap-3"
+              className="flex items-center gap-2 sm:gap-3 flex-shrink-0"
             >
-              <img src={logo} alt="FCC Logo" className="h-10 w-10 sm:h-14 sm:w-14" />
-              <div className="hidden xs:block">
-                <div className="text-base sm:text-xl font-bold text-[#d4af37]">Fight Club Championship</div>
-                <div className="text-[10px] sm:text-xs text-[#808080]">Private Limited</div>
+              <img src={logo} alt="FCC Logo" className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 flex-shrink-0" />
+              <div className="flex flex-col">
+                <div className="text-sm xs:text-base sm:text-lg md:text-xl font-bold text-[#d4af37] leading-tight whitespace-nowrap">
+                  Fight Club Championship
+                </div>
+                <div className="text-[9px] xs:text-[10px] sm:text-xs text-[#808080] leading-tight">
+                  Private Limited
+                </div>
               </div>
             </motion.a>
 
-            {/* Desktop Navigation */}
+            {/* Desktop Navigation with CTA */}
             <div className="hidden lg:flex items-center gap-6 xl:gap-8">
               {[
                 { href: '#home', label: 'Home' },
@@ -302,17 +307,42 @@ export default function App() {
                   <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#d4af37] transition-all group-hover:w-full"></span>
                 </a>
               ))}
+              
+              {/* CTA Button in Desktop Nav */}
+              <motion.a
+                href="#athletes"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="ml-2 px-5 py-2.5 bg-gradient-to-r from-[#c41e3a] to-[#8b1526] hover:from-[#d4af37] hover:to-[#b8941f] text-white text-sm xl:text-base font-bold rounded-lg transition-all shadow-lg shadow-[#c41e3a]/30 flex items-center gap-2 whitespace-nowrap"
+              >
+                Register Now
+                <ArrowRight className="h-4 w-4" />
+              </motion.a>
             </div>
 
-            {/* Mobile Menu Button - Larger touch target */}
-            <button
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
-              aria-expanded={mobileMenuOpen}
-              className="lg:hidden text-white p-2 -mr-2 rounded-lg hover:bg-white/10 active:bg-white/20 transition-colors"
-            >
-              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-            </button>
+            {/* Mobile: CTA Button + Menu Button */}
+            <div className="flex items-center gap-2 lg:hidden">
+              {/* Mobile CTA Button */}
+              <motion.a
+                href="#athletes"
+                whileTap={{ scale: 0.95 }}
+                className="px-3 py-2 bg-gradient-to-r from-[#c41e3a] to-[#8b1526] text-white text-xs sm:text-sm font-bold rounded-lg transition-all shadow-md flex items-center gap-1.5 whitespace-nowrap"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Register
+                <ArrowRight className="h-3 w-3 sm:h-4 sm:w-4" />
+              </motion.a>
+              
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
+                aria-expanded={mobileMenuOpen}
+                className="text-white p-2 rounded-lg hover:bg-white/10 active:bg-white/20 transition-colors"
+              >
+                {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+              </button>
+            </div>
           </div>
 
           {/* Mobile Menu - Full height with better spacing */}
@@ -342,133 +372,33 @@ export default function App() {
                     {link.label}
                   </a>
                 ))}
+                
+                {/* Mobile CTA Button in Menu */}
+                <motion.a
+                  href="#athletes"
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="mt-2 mx-4 px-6 py-3.5 bg-gradient-to-r from-[#c41e3a] to-[#8b1526] hover:from-[#d4af37] hover:to-[#b8941f] text-white text-base font-bold rounded-lg transition-all shadow-lg shadow-[#c41e3a]/30 flex items-center justify-center gap-2"
+                >
+                  Register Now
+                  <ArrowRight className="h-5 w-5" />
+                </motion.a>
               </div>
             </motion.div>
           )}
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `repeating-linear-gradient(0deg, #c41e3a 0px, #c41e3a 2px, transparent 2px, transparent 50px),
-                             repeating-linear-gradient(90deg, #c41e3a 0px, #c41e3a 2px, transparent 2px, transparent 50px)`
-          }}></div>
-        </div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <div className="inline-block mb-6">
-              <span className="bg-gradient-to-r from-[#c41e3a] to-[#d4af37] text-white px-6 py-2 rounded-full text-sm font-bold tracking-wider">
-                INDIA'S PREMIER UNIVERSITY STRENGTH CHAMPIONSHIP
-              </span>
-            </div>
-
-            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black mb-6 bg-gradient-to-r from-white via-[#d4af37] to-white bg-clip-text text-transparent leading-tight">
-              STRONGEST MAN<br/>UNIVERSITY CHAMPIONSHIPS
-            </h1>
-
-            {/* Welcome Message - Strong Introduction */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3, duration: 0.6 }}
-              className="mb-8 max-w-3xl mx-auto"
-            >
-              <div className="bg-gradient-to-r from-black/60 via-[#1a1a1a]/80 to-black/60 border border-[#d4af37]/30 rounded-xl p-4 sm:p-6 md:p-8 backdrop-blur-sm">
-                <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-white mb-3 leading-snug">
-                  Welcome to the Strongest Man Competition.
-                </p>
-                <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-4">
-                  <span className="bg-[#c41e3a] text-white px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg font-bold text-sm sm:text-base md:text-lg">
-                    5 Workouts
-                  </span>
-                  <span className="bg-[#d4af37] text-black px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg font-bold text-sm sm:text-base md:text-lg">
-                    ₹1 Lakh Prize
-                  </span>
-                </div>
-                <p className="text-[#d4af37] text-base sm:text-lg md:text-xl lg:text-2xl font-semibold italic">
-                  Will you rise to the challenge?
-                </p>
-              </div>
-            </motion.div>
-
-            <p className="text-lg sm:text-xl md:text-2xl text-[#b0b0b0] mb-8 max-w-3xl mx-auto">
-              Building strength, discipline, and competitive spirit in Indian campuses
-            </p>
-
-            <motion.a
-              href="mailto:contact@fightclubchampionship.com"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#c41e3a] to-[#8b1526] hover:from-[#d4af37] hover:to-[#b8941f] text-white px-8 py-4 rounded-lg font-bold text-lg transition-all shadow-lg shadow-[#c41e3a]/50"
-            >
-              Register as University / College
-              <ChevronRight className="w-5 h-5" />
-            </motion.a>
-
-            <p className="text-sm text-[#808080] mt-4">
-              Open to all enrolled students (18+)
-            </p>
-          </motion.div>
-        </div>
-
-        {/* Logo Watermark */}
-        <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
-          <img src={logo} alt="" className="w-[600px] h-[600px] object-contain" />
-        </div>
-
-        {/* Animated Glow Effects */}
-        <motion.div
-          animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-          }}
-          transition={{
-            duration: 4,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#c41e3a] rounded-full blur-[120px] pointer-events-none"
-        />
-        <motion.div
-          animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.2, 0.4, 0.2],
-          }}
-          transition={{
-            duration: 5,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
-          }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-[#d4af37] rounded-full blur-[120px] pointer-events-none"
-        />
-
-        {/* Scroll Indicator */}
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ repeat: Infinity, duration: 2 }}
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        >
-          <ChevronRight className="w-8 h-8 text-[#d4af37] rotate-90" />
-        </motion.div>
-      </section>
+      <Hero />
 
       {/* Strongest Man - University Level Section */}
       <section id="strongest-man" className="py-20 bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] relative overflow-hidden">
-        {/* Logo Watermark */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none">
-          <img src={logo} alt="" className="w-[800px] h-[800px] object-contain" />
+        {/* Logo Watermark - Mobile Only (No Glows) */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.08] md:opacity-[0.03] pointer-events-none flex items-center justify-center">
+          <img src={logo} alt="" loading="lazy" className="w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] md:w-[700px] md:h-[700px] lg:w-[800px] lg:h-[800px] object-contain" />
         </div>
 
-        {/* Animated Energy Glow */}
+        {/* Animated Energy Glow - Desktop Only */}
         <motion.div
           animate={{
             scale: [1, 1.2, 1],
@@ -479,7 +409,7 @@ export default function App() {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute top-0 right-0 w-96 h-96 bg-[#c41e3a] rounded-full blur-[150px] pointer-events-none"
+          className="hidden md:block absolute top-0 right-0 w-96 h-96 bg-[#c41e3a] rounded-full blur-[150px] pointer-events-none"
         />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -500,14 +430,15 @@ export default function App() {
 
           {/* Why University-Level Championships Matter */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.4 }}
             className="mb-20 bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border-2 border-[#c41e3a] rounded-xl p-8 md:p-12"
           >
-            <div className="flex items-center gap-4 mb-6">
+            <div className="flex items-center gap-4 mb-6 text-center ">
               <GraduationCap className="w-12 h-12 text-[#d4af37]" />
-              <h3 className="text-[#d4af37]">Why University-Level Championships Matter</h3>
+              <h3 className="text-[#d4af37] text-center">Why University-Level Championships Matter ?</h3>
             </div>
 
             <div className="grid md:grid-cols-2 gap-6 text-[#b0b0b0]">
@@ -567,9 +498,9 @@ export default function App() {
                 className="relative group overflow-hidden rounded-xl border-2 border-[#2a2a2a] hover:border-[#c41e3a] transition-all"
               >
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1735835504219-1b1d4aad77cd?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJvbmdtYW4lMjBjb21wZXRpdGlvbiUyMHRpcmUlMjBmbGlwfGVufDF8fHx8MTc2ODI0MDkxN3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                  src={featureImages.strongmanCompetition}
                   alt="Strongman Competition"
-                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-80 object-contain group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -585,9 +516,9 @@ export default function App() {
                 className="relative group overflow-hidden rounded-xl border-2 border-[#2a2a2a] hover:border-[#c41e3a] transition-all"
               >
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1762709753300-342ab94e8b05?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHx1bml2ZXJzaXR5JTIwc3BvcnRzJTIwY2hhbXBpb25zaGlwfGVufDF8fHx8MTc2ODI0MDkxN3ww&ixlib=rb-4.1.0&q=80&w=1080"
+                  src= {featureImages.universityChampionship}
                   alt="University Championship"
-                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-80 object-contain group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -604,9 +535,9 @@ export default function App() {
                 className="relative group overflow-hidden rounded-xl border-2 border-[#2a2a2a] hover:border-[#c41e3a] transition-all"
               >
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1765302755287-e3288ea8fbcb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJlbmd0aCUyMHRyYWluaW5nJTIwZ3ltJTIwcG93ZXJ8ZW58MXx8fHwxNzY4MjQwOTE4fDA&ixlib=rb-4.1.0&q=80&w=1080"
+                  src= {featureImages.strengthTraining}
                   alt="Strength Training"
-                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-80 object-contain group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -623,9 +554,9 @@ export default function App() {
                 className="relative group overflow-hidden rounded-xl border-2 border-[#2a2a2a] hover:border-[#c41e3a] transition-all"
               >
                 <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1759936802396-0177ea95a088?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxhdGhsZXRpYyUyMGNvbXBldGl0aW9uJTIwdHJvcGh5fGVufDF8fHx8MTc2ODI0MDkxOHww&ixlib=rb-4.1.0&q=80&w=1080"
+                  src= {featureImages.championshipTrophy}
                   alt="Championship Trophy"
-                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                  className="w-full h-80 object-contain group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
                 <div className="absolute bottom-0 left-0 right-0 p-6">
@@ -653,17 +584,17 @@ export default function App() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
-                whileHover={{ y: -8, scale: 1.02 }}
+                whileHover={{ y: -4, scale: 1.01 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => setSelectedEventIndex(index)}
-                className="group cursor-pointer bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] rounded-xl overflow-hidden border-2 border-[#2a2a2a] hover:border-[#d4af37] active:border-[#c41e3a] transition-all shadow-lg hover:shadow-xl hover:shadow-[#d4af37]/20"
+                className="group cursor-pointer bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] rounded-xl overflow-hidden border-2 border-[#2a2a2a] md:hover:border-[#d4af37] active:border-[#c41e3a] transition-all shadow-lg md:hover:shadow-xl md:hover:shadow-[#d4af37]/20"
               >
                 <div className="relative h-56 sm:h-64 overflow-hidden">
                   <img 
                     src={event.image} 
                     alt={event.title}
                     loading="lazy"
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    className="w-full h-full object-cover md:group-hover:scale-110 transition-transform duration-300"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent"></div>
                   <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4">
@@ -721,12 +652,12 @@ export default function App() {
 
       {/* Universities & Colleges Section */}
       <section id="universities" className="py-20 bg-gradient-to-b from-[#1a1a1a] to-[#0a0a0a] relative overflow-hidden">
-        {/* Logo Watermark */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 opacity-[0.03] pointer-events-none rotate-12">
-          <img src={logo} alt="" className="w-[700px] h-[700px] object-contain" />
+        {/* Logo Watermark - Mobile Only (No Glows) */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.08] md:opacity-[0.03] pointer-events-none flex items-center justify-center rotate-12">
+          <img src={logo} alt="" loading="lazy" className="w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] md:w-[600px] md:h-[600px] lg:w-[700px] lg:h-[700px] object-contain" />
         </div>
 
-        {/* Animated Energy Pulses */}
+        {/* Animated Energy Pulses - Desktop Only */}
         <motion.div
           animate={{
             scale: [1, 1.3, 1],
@@ -737,7 +668,7 @@ export default function App() {
             repeat: Infinity,
             ease: "easeInOut"
           }}
-          className="absolute bottom-0 left-0 w-96 h-96 bg-[#d4af37] rounded-full blur-[140px] pointer-events-none"
+          className="hidden md:block absolute bottom-0 left-0 w-96 h-96 bg-[#d4af37] rounded-full blur-[140px] pointer-events-none"
         />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -837,12 +768,12 @@ export default function App() {
 
       {/* Athletes Section */}
       <section id="athletes" className="py-20 bg-gradient-to-b from-[#0a0a0a] to-[#1a1a1a] relative overflow-hidden">
-        {/* Logo Watermark */}
-        <div className="absolute top-1/2 right-0 transform translate-x-1/4 -translate-y-1/2 opacity-[0.04] pointer-events-none -rotate-12">
-          <img src={logo} alt="" className="w-[700px] h-[700px] object-contain" />
+        {/* Logo Watermark - Mobile Only (No Glows) */}
+        <div className="absolute top-1/2 right-0 translate-x-1/4 -translate-y-1/2 opacity-[0.08] md:opacity-[0.04] pointer-events-none flex items-center justify-center -rotate-12">
+          <img src={logo} alt="" loading="lazy" className="w-[350px] h-[350px] sm:w-[450px] sm:h-[450px] md:w-[600px] md:h-[600px] lg:w-[700px] lg:h-[700px] object-contain" />
         </div>
 
-        {/* Animated Red Energy */}
+        {/* Animated Red Energy - Desktop Only */}
         <motion.div
           animate={{
             scale: [1, 1.4, 1],
@@ -854,7 +785,7 @@ export default function App() {
             ease: "easeInOut",
             delay: 0.5
           }}
-          className="absolute top-1/4 right-1/4 w-96 h-96 bg-[#c41e3a] rounded-full blur-[140px] pointer-events-none"
+          className="hidden md:block absolute top-1/4 right-1/4 w-96 h-96 bg-[#c41e3a] rounded-full blur-[140px] pointer-events-none"
         />
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

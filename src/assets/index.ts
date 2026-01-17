@@ -21,19 +21,25 @@
 // LOGO & BRANDING
 // =============================================================================
 
-import logoImage from './logo.png';
-export const logo = logoImage;
+// Logo from Cloudinary (URL string, not module import)
+export const logo = 'https://res.cloudinary.com/doxluexqo/image/upload/v1768575914/logo_ikpzjd.png';
+
+// Feature images from local files (module imports)
+import feature1Image from './feature 1.png';
+import feature2Image from './feature 3.png';
+import feature3Image from './feature 4.png';
+import feature4Image from './feature 2.png';
 
 // =============================================================================
 // EVENT IMAGES
 // =============================================================================
 
 export const eventImages = {
-  deadlift: 'https://res.cloudinary.com/doxluexqo/image/upload/v1768557657/WhatsApp_Image_2026-01-07_at_10.22.33_PM_3_jcvzu7.jpg',
-  farmersWalk: 'https://res.cloudinary.com/doxluexqo/image/upload/v1768557685/WhatsApp_Image_2026-01-07_at_10.22.33_PM_2_sxrwcl.jpg',
-  sandbagLoading: 'https://res.cloudinary.com/doxluexqo/image/upload/v1768557702/WhatsApp_Image_2026-01-07_at_10.22.33_PM_1_kjj6xt.jpg',
-  tireFlip: 'https://res.cloudinary.com/doxluexqo/image/upload/v1768557726/WhatsApp_Image_2026-01-07_at_10.22.33_PM_a1clza.jpg',
-  yokeWalk: 'https://res.cloudinary.com/doxluexqo/image/upload/v1768572598/event_5_brcr5r.jpg',
+  deadlift: 'https://res.cloudinary.com/doxluexqo/image/upload/v1768645606/event_1_mheui6.png',
+  farmersWalk: 'https://res.cloudinary.com/doxluexqo/image/upload/v1768645605/event_2_tdveq6.png',
+  sandbagLoading: 'https://res.cloudinary.com/doxluexqo/image/upload/v1768645606/event_3_q3jscn.png',
+  tireFlip: 'https://res.cloudinary.com/doxluexqo/image/upload/v1768645605/event_4_qmpmrc.png',
+  yokeWalk: 'https://res.cloudinary.com/doxluexqo/image/upload/v1768645605/event_5_hbkmmo.png',
 };
 
 // =============================================================================
@@ -50,10 +56,10 @@ export const heroImages = {
 // =============================================================================
 
 export const featureImages = {
-  strongmanCompetition: 'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop',
-  universityChampionship: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=600&h=400&fit=crop',
-  strengthTraining: 'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&h=400&fit=crop',
-  championshipTrophy: 'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&h=400&fit=crop',
+  strongmanCompetition: feature1Image,
+  universityChampionship: feature2Image,
+  strengthTraining: feature3Image,
+  championshipTrophy: feature4Image,
 };
 
 // =============================================================================
