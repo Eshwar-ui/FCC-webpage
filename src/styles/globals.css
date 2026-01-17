@@ -69,9 +69,7 @@ body {
   color: var(--color-light-grey);
   /* Performance optimizations */
   -webkit-tap-highlight-color: transparent;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  perspective: 1000px;
+  /* REMOVED: transform, backface-visibility, perspective - they break position: fixed for modals */
 }
 
 /* Reduce motion for accessibility and performance */

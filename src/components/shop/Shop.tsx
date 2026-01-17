@@ -24,7 +24,7 @@ export function Shop({ logo }: ShopProps) {
       {/* Logo Watermark - Mobile Only (No Glows) */}
       {logo && (
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.08] md:opacity-[0.02] pointer-events-none flex items-center justify-center">
-          <img src={logo} alt="" loading="lazy" className="w-[350px] h-[350px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] object-contain" />
+          <img src={logo} alt="Fight Club Championship Logo Watermark" loading="lazy" className="w-[350px] h-[350px] sm:w-[400px] sm:h-[400px] md:w-[500px] md:h-[500px] object-contain" />
         </div>
       )}
 

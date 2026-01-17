@@ -21,8 +21,10 @@
 // LOGO & BRANDING
 // =============================================================================
 
-// Logo from Cloudinary (URL string, not module import)
-export const logo = 'https://res.cloudinary.com/doxluexqo/image/upload/v1768575914/logo_ikpzjd.png';
+// Logo from Cloudinary (optimized with Cloudinary transformations)
+// Transformations: f_auto (WebP format), q_auto (auto quality), w_800 (max width), c_limit (limit dimensions)
+// Using Cloudinary transformations: f_auto (WebP), q_auto (quality), w_800 (width)
+export const logo = 'https://res.cloudinary.com/doxluexqo/image/upload/f_auto,q_auto,w_800,c_limit/v1768575914/logo_ikpzjd.png';
 
 // Feature images from local files (module imports)
 import feature1Image from './feature 1.png';
@@ -31,15 +33,15 @@ import feature3Image from './feature 4.png';
 import feature4Image from './feature 2.png';
 
 // =============================================================================
-// EVENT IMAGES
+// EVENT IMAGES (Optimized with Cloudinary transformations)
 // =============================================================================
 
 export const eventImages = {
-  deadlift: 'https://res.cloudinary.com/doxluexqo/image/upload/v1768645606/event_1_mheui6.png',
-  farmersWalk: 'https://res.cloudinary.com/doxluexqo/image/upload/v1768645605/event_2_tdveq6.png',
-  sandbagLoading: 'https://res.cloudinary.com/doxluexqo/image/upload/v1768645606/event_3_q3jscn.png',
-  tireFlip: 'https://res.cloudinary.com/doxluexqo/image/upload/v1768645605/event_4_qmpmrc.png',
-  yokeWalk: 'https://res.cloudinary.com/doxluexqo/image/upload/v1768645605/event_5_hbkmmo.png',
+  deadlift: 'https://res.cloudinary.com/doxluexqo/image/upload/f_auto,q_auto,w_800,c_limit/v1768645606/event_1_mheui6.png',
+  farmersWalk: 'https://res.cloudinary.com/doxluexqo/image/upload/f_auto,q_auto,w_800,c_limit/v1768645605/event_2_tdveq6.png',
+  sandbagLoading: 'https://res.cloudinary.com/doxluexqo/image/upload/f_auto,q_auto,w_800,c_limit/v1768645606/event_3_q3jscn.png',
+  tireFlip: 'https://res.cloudinary.com/doxluexqo/image/upload/f_auto,q_auto,w_800,c_limit/v1768645605/event_4_qmpmrc.png',
+  yokeWalk: 'https://res.cloudinary.com/doxluexqo/image/upload/f_auto,q_auto,w_800,c_limit/v1768645605/event_5_hbkmmo.png',
 };
 
 // =============================================================================
