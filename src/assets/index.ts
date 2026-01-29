@@ -24,7 +24,7 @@
 // Logo from Cloudinary (optimized with Cloudinary transformations)
 // Transformations: f_auto (WebP format), q_auto (auto quality), w_800 (max width), c_limit (limit dimensions)
 // Using Cloudinary transformations: f_auto (WebP), q_auto (quality), w_800 (width)
-export const logo = 'https://res.cloudinary.com/doxluexqo/image/upload/f_auto,q_auto,w_800,c_limit/v1768575914/logo_ikpzjd.png';
+export const logo = 'https://res.cloudinary.com/dlrtaxlcl/image/upload/v1769695366/FCC_logo_r61ep2.png';
 
 // Feature images from local files (module imports)
 import feature1Image from './feature 1.png';
