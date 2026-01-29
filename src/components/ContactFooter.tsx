@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { 
-  Phone, Mail, MapPin, Facebook, Instagram, Youtube, 
+  Phone, Mail, MapPin, Facebook, Instagram, Twitter, 
   CheckCircle2
 } from 'lucide-react';
 
@@ -152,8 +152,9 @@ export function ContactFooter({
               </div>
               <div className="text-[#b0b0b0]">
                 <p>Fight Club Championship Pvt. Ltd.</p>
-                <p className="text-sm mt-2">Mumbai, Maharashtra</p>
-                <p className="text-sm">India - 400001</p>
+                <p className="text-sm mt-2">3rd Floor, Dwarawati -31, Subhodaya Colony,</p>
+                <p className="text-sm">Vijaya Nagar Colony, Kukatpally,</p>
+                <p className="text-sm">Hyderabad, Telangana 500072</p>
               </div>
             </motion.div>
           </div>
@@ -314,7 +315,7 @@ export function ContactFooter({
             <h3 className="mb-6 text-white">Follow Our Journey</h3>
             <div className="flex justify-center gap-4">
               <motion.a
-                href="https://facebook.com"
+                href="https://www.facebook.com/profile.php?id=61584416764591"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -5 }}
@@ -323,7 +324,7 @@ export function ContactFooter({
                 <Facebook className="w-7 h-7 text-white" />
               </motion.a>
               <motion.a
-                href="https://instagram.com"
+                href="https://www.instagram.com/thefightclubchampionship/"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -5 }}
@@ -332,13 +333,13 @@ export function ContactFooter({
                 <Instagram className="w-7 h-7 text-white" />
               </motion.a>
               <motion.a
-                href="https://youtube.com"
+                href="https://x.com/the_fight8446"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.1, y: -5 }}
                 className="bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] hover:from-[#c41e3a] hover:to-[#8b1526] border-2 border-[#2a2a2a] hover:border-[#d4af37] p-4 rounded-xl transition-all"
               >
-                <Youtube className="w-7 h-7 text-white" />
+                <Twitter className="w-7 h-7 text-white" />
               </motion.a>
             </div>
           </motion.div>
@@ -366,7 +367,7 @@ export function ContactFooter({
               </p>
               <div className="flex gap-3">
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/profile.php?id=61584416764591"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#1a1a1a] hover:bg-[#c41e3a] border border-[#2a2a2a] hover:border-[#d4af37] p-2 rounded-lg transition-all"
@@ -374,7 +375,7 @@ export function ContactFooter({
                   <Facebook className="w-5 h-5 text-white" />
                 </a>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/thefightclubchampionship/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#1a1a1a] hover:bg-[#c41e3a] border border-[#2a2a2a] hover:border-[#d4af37] p-2 rounded-lg transition-all"
@@ -382,12 +383,12 @@ export function ContactFooter({
                   <Instagram className="w-5 h-5 text-white" />
                 </a>
                 <a
-                  href="https://youtube.com"
+                  href="https://x.com/the_fight8446"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-[#1a1a1a] hover:bg-[#c41e3a] border border-[#2a2a2a] hover:border-[#d4af37] p-2 rounded-lg transition-all"
                 >
-                  <Youtube className="w-5 h-5 text-white" />
+                  <Twitter className="w-5 h-5 text-white" />
                 </a>
               </div>
             </div>
@@ -402,8 +403,8 @@ export function ContactFooter({
                   </a>
                 </li>
                 <li>
-                  <a href="#strongest-man" className="text-[#b0b0b0] hover:text-[#d4af37] transition-colors text-sm flex items-center gap-1">
-                    Strongest Man
+                  <a href="#strongest-human" className="text-[#b0b0b0] hover:text-[#d4af37] transition-colors text-sm flex items-center gap-1">
+                    Strongest Women and Men
                   </a>
                 </li>
                 <li>
@@ -419,6 +420,11 @@ export function ContactFooter({
                 <li>
                   <a href="#roadmap" className="text-[#b0b0b0] hover:text-[#d4af37] transition-colors text-sm flex items-center gap-1">
                     Vision & Roadmap
+                  </a>
+                </li>
+                <li>
+                  <a href="#governance" className="text-[#b0b0b0] hover:text-[#d4af37] transition-colors text-sm flex items-center gap-1">
+                    Governance
                   </a>
                 </li>
                 <li>
@@ -448,7 +454,7 @@ export function ContactFooter({
                 <li className="flex items-start gap-2">
                   <MapPin className="w-4 h-4 text-[#c41e3a] mt-0.5 flex-shrink-0" />
                   <span className="text-[#b0b0b0] text-sm">
-                    Mumbai, Maharashtra, India
+                    3rd Floor, Dwarawati -31, Subhodaya Colony, Vijaya Nagar Colony, Kukatpally, Hyderabad, Telangana 500072
                   </span>
                 </li>
               </ul>
