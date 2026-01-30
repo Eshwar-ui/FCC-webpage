@@ -359,7 +359,6 @@ export function ContactFooter({
                 <img src={logo} alt="FCC Logo" className="h-16 w-16" />
                 <div>
                   <div className="text-xl font-bold text-[#d4af37]">Fight Club Championship</div>
-                  <div className="text-sm text-[#808080]">Private Limited</div>
                 </div>
               </div>
               <p className="text-[#b0b0b0] text-sm max-w-md mb-4">

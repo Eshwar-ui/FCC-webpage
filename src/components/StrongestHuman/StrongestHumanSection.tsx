@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { GraduationCap, CheckCircle2 } from 'lucide-react';
 import { CompetitionTab } from './CompetitionTab';
-import { logo, featureImages } from '../../assets';
+import { logo, featureImages, strongestManAndWoman } from '../../assets';
 import { ImageWithFallback } from '../figma/ImangeWithFallback';
 import { menEvents, womenEvents } from '../../content';
 
@@ -21,9 +21,33 @@ export function StrongestHumanSection({ onSelectEvent }: StrongestHumanSectionPr
         <img src={logo} alt="" loading="lazy" decoding="async" width={600} height={600} className="w-full h-full object-contain rotate-12" />
       </div>
 
+      {/* Side Background Asset - Left Side (Aligned with Title) */}
+      <div className="absolute top-0 -left-20 md:-left-40 opacity-[0.06] pointer-events-none w-[400px] h-[400px] md:w-[600px] md:h-[600px] lg:w-[800px] lg:h-[800px]">
+        <img
+          src={strongestManAndWoman}
+          alt=""
+          loading="lazy"
+          decoding="async"
+          className="w-full h-full object-contain -rotate-12"
+        />
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-black mb-6 text-white">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="mb-8"
+          >
+            <img
+              src={strongestManAndWoman}
+              alt="Strongest Man and Woman"
+              className="w-full max-w-[80px] md:max-w-[120px] mx-auto drop-shadow-[0_0_15px_rgba(212,175,55,0.3)] opacity-80"
+            />
+          </motion.div>
+          <h2 className="text-4xl md:text-5xl font-black mb-6 text-white uppercase tracking-tighter">
             Strongest <span className="text-[#d4af37]">Human</span>
           </h2>
           <p className="text-lg text-[#b0b0b0] max-w-4xl mx-auto leading-relaxed">
@@ -36,21 +60,19 @@ export function StrongestHumanSection({ onSelectEvent }: StrongestHumanSectionPr
           <div className="inline-flex p-1 bg-[#1a1a1a] border-2 border-[#2a2a2a] rounded-xl">
             <button
               onClick={() => setActiveTab('woman')}
-              className={`px-8 py-3 rounded-lg font-bold transition-all ${
-                activeTab === 'woman' 
-                  ? 'bg-[#c41e3a] text-[#d4af37] shadow-lg shadow-[#c41e3a]/20' 
-                  : 'text-[#d4af37] hover:text-white'
-              }`}
+              className={`px-8 py-3 rounded-lg font-bold transition-all ${activeTab === 'woman'
+                ? 'bg-[#c41e3a] text-[#d4af37] shadow-lg shadow-[#c41e3a]/20'
+                : 'text-[#d4af37] hover:text-white'
+                }`}
             >
               Strongest Woman
             </button>
             <button
               onClick={() => setActiveTab('man')}
-              className={`px-8 py-3 rounded-lg font-bold transition-all ${
-                activeTab === 'man' 
-                  ? 'bg-[#d4af37] text-[#c41e3a] shadow-lg shadow-[#d4af37]/20' 
-                  : 'text-[#c41e3a] hover:text-white'
-              }`}
+              className={`px-8 py-3 rounded-lg font-bold transition-all ${activeTab === 'man'
+                ? 'bg-[#d4af37] text-[#c41e3a] shadow-lg shadow-[#d4af37]/20'
+                : 'text-[#c41e3a] hover:text-white'
+                }`}
             >
               Strongest Man
             </button>
@@ -64,9 +86,9 @@ export function StrongestHumanSection({ onSelectEvent }: StrongestHumanSectionPr
           animate={{ opacity: 1 }}
           transition={{ duration: 0.2 }}
         >
-          <CompetitionTab 
-            type={activeTab} 
-            events={activeTab === 'man' ? menEvents : (womenEvents.length > 0 ? womenEvents : menEvents)} 
+          <CompetitionTab
+            type={activeTab}
+            events={activeTab === 'man' ? menEvents : (womenEvents.length > 0 ? womenEvents : menEvents)}
             onSelectEvent={(idx) => onSelectEvent(idx, activeTab)}
           />
         </motion.div>

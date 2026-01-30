@@ -36,9 +36,6 @@ export function Navbar() {
               <div className="text-sm sm:text-base xl:text-lg font-bold text-[#d4af37] leading-tight whitespace-nowrap">
                 T Fight Club Championship
               </div>
-              <div className="text-[8px] sm:text-[10px] text-[#808080] leading-tight">
-                Private Limited
-              </div>
             </div>
           </motion.a>
 
