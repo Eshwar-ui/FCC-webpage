@@ -83,34 +83,45 @@ export function Hero() {
                 Welcome to the
               </span>
               <span className="relative block mt-2 sm:mt-4 px-2">
-                {/* Intense Pulsing Aura */}
+                {/* High-Voltage Flicker Background */}
                 <motion.span
                   animate={{
-                    opacity: [0.3, 0.6, 0.3],
-                    scale: [0.98, 1.05, 0.98],
+                    opacity: [0.2, 0.9, 0.1, 1, 0.2, 0.8, 0.1],
+                    filter: [
+                      "blur(15px) brightness(1)",
+                      "blur(25px) brightness(2)",
+                      "blur(15px) brightness(1)",
+                      "blur(35px) brightness(2.5)",
+                      "blur(15px) brightness(1.2)",
+                      "blur(25px) brightness(2)",
+                      "blur(15px) brightness(1)",
+                    ]
                   }}
                   transition={{
-                    duration: 3,
+                    duration: 1.5,
                     repeat: Infinity,
-                    ease: "easeInOut"
+                    times: [0, 0.05, 0.1, 0.15, 0.2, 0.5, 1],
+                    ease: "linear"
                   }}
-                  className="absolute inset-0 text-[#ffd700] blur-[15px] md:blur-[30px] font-black pointer-events-none select-none"
+                  className="absolute inset-0 text-[#ffd700] font-black pointer-events-none select-none"
                   aria-hidden
                 >
                   STRONGEST WOMEN & MEN
                 </motion.span>
 
-                {/* Shimmering Metallic Gradient Text */}
+                {/* Shimmering Text with "Voltage Glitch" movement */}
                 <motion.span
-                  className="relative inline-block bg-clip-text text-transparent bg-gradient-to-r from-[#bf953f] via-[#fff1a7] to-[#bf953f] drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)]"
+                  className="relative inline-block bg-clip-text text-transparent bg-gradient-to-r from-[#bf953f] via-[#fff1a7] to-[#bf953f] drop-shadow-[0_4px_15px_rgba(0,0,0,0.6)]"
                   style={{ backgroundSize: '200% auto' }}
                   animate={{
-                    backgroundPosition: ["0% center", "200% center"]
+                    backgroundPosition: ["0% center", "200% center"],
+                    x: [0, -2, 2, -1, 1, 0],
+                    filter: ["brightness(1)", "brightness(1.5)", "brightness(1)", "brightness(2)", "brightness(1)"],
                   }}
                   transition={{
-                    duration: 4,
-                    repeat: Infinity,
-                    ease: "linear"
+                    backgroundPosition: { duration: 4, repeat: Infinity, ease: "linear" },
+                    x: { duration: 0.1, repeat: Infinity, repeatDelay: 2.5, times: [0, 0.2, 0.4, 0.6, 0.8, 1] },
+                    filter: { duration: 0.1, repeat: Infinity, repeatDelay: 2.5, times: [0, 0.2, 0.4, 0.6, 1] }
                   }}
                 >
                   STRONGEST WOMEN & MEN
