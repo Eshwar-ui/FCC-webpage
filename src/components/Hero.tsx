@@ -50,7 +50,6 @@ export function Hero() {
             width="1000"
             height="1000"
             className="relative w-[300px] h-[300px] xs:w-[400px] xs:h-[400px] sm:w-[500px] sm:h-[500px] md:w-[700px] md:h-[700px] lg:w-[800px] lg:h-[800px] xl:w-[1000px] xl:h-[1000px] object-contain opacity-[0.08] sm:opacity-[0.1] md:opacity-[0.15] mx-auto"
-            style={{ transform: 'rotate(-12deg)' }}
           />
         </div>
       </motion.div>
@@ -83,11 +82,50 @@ export function Hero() {
               <span className="block text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] md:drop-shadow-[0_0_20px_rgba(212,175,55,0.5),0_2px_4px_rgba(0,0,0,0.8)] px-2">
                 Welcome to the
               </span>
-              <span className="relative block mt-1 sm:mt-2 px-2">
-                <span className="hidden md:block absolute inset-0 text-[#d4af37] blur-[2px] opacity-80">STRONGEST WOMEN & MEN</span>
-                <span className="relative text-[#ffd700] drop-shadow-[0_2px_6px_rgba(0,0,0,0.9)] md:drop-shadow-[0_0_20px_rgba(255,215,0,0.8),0_4px_8px_rgba(0,0,0,0.9),0_0_0_4px_rgba(0,0,0,0.8)]">
+              <span className="relative block mt-2 sm:mt-4 px-2">
+                {/* High-Voltage Flicker Background */}
+                <motion.span
+                  animate={{
+                    opacity: [0.2, 0.9, 0.1, 1, 0.2, 0.8, 0.1],
+                    filter: [
+                      "blur(15px) brightness(1)",
+                      "blur(25px) brightness(2)",
+                      "blur(15px) brightness(1)",
+                      "blur(35px) brightness(2.5)",
+                      "blur(15px) brightness(1.2)",
+                      "blur(25px) brightness(2)",
+                      "blur(15px) brightness(1)",
+                    ]
+                  }}
+                  transition={{
+                    duration: 1.5,
+                    repeat: Infinity,
+                    times: [0, 0.05, 0.1, 0.15, 0.2, 0.5, 1],
+                    ease: "linear"
+                  }}
+                  className="absolute inset-0 text-[#ffd700] font-black pointer-events-none select-none"
+                  aria-hidden
+                >
                   STRONGEST WOMEN & MEN
-                </span>
+                </motion.span>
+
+                {/* Shimmering Text with "Voltage Glitch" movement */}
+                <motion.span
+                  className="relative inline-block bg-clip-text text-transparent bg-gradient-to-r from-[#bf953f] via-[#fff1a7] to-[#bf953f] drop-shadow-[0_4px_15px_rgba(0,0,0,0.6)]"
+                  style={{ backgroundSize: '200% auto' }}
+                  animate={{
+                    backgroundPosition: ["0% center", "200% center"],
+                    x: [0, -2, 2, -1, 1, 0],
+                    filter: ["brightness(1)", "brightness(1.5)", "brightness(1)", "brightness(2)", "brightness(1)"],
+                  }}
+                  transition={{
+                    backgroundPosition: { duration: 4, repeat: Infinity, ease: "linear" },
+                    x: { duration: 0.1, repeat: Infinity, repeatDelay: 2.5, times: [0, 0.2, 0.4, 0.6, 0.8, 1] },
+                    filter: { duration: 0.1, repeat: Infinity, repeatDelay: 2.5, times: [0, 0.2, 0.4, 0.6, 1] }
+                  }}
+                >
+                  STRONGEST WOMEN & MEN
+                </motion.span>
               </span>
               <span className="block text-white text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mt-2 sm:mt-3 tracking-wider px-2">
                 COMPETITION
@@ -102,8 +140,8 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="mb-6 sm:mb-8 md:mb-10 space-y-3 sm:space-y-4 px-2"
           >
-             {/* Additional Message Line */}
-             <motion.p
+            {/* Additional Message Line */}
+            <motion.p
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1 }}
@@ -122,8 +160,8 @@ export function Hero() {
                 Will you rise to the challenge?
               </span>
             </motion.p>
-            
-           
+
+
           </motion.div>
 
           {/* Key Stats - Bold Pills - No Backdrop Blur on Mobile */}
