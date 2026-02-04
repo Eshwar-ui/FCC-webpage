@@ -24,7 +24,8 @@
 // Logo from Cloudinary (optimized with Cloudinary transformations)
 // Transformations: f_auto (WebP format), q_auto (auto quality), w_800 (max width), c_limit (limit dimensions)
 // Using Cloudinary transformations: f_auto (WebP), q_auto (quality), w_800 (width)
-export const logo = 'https://res.cloudinary.com/dlrtaxlcl/image/upload/v1769695366/FCC_logo_r61ep2.png';
+export const logo = 'https://res.cloudinary.com/doxluexqo/image/upload/v1769752720/0f0381e9-47d8-476f-b6c1-4bc81899f859.png';
+export const strongestManAndWoman = 'https://res.cloudinary.com/doxluexqo/image/upload/v1769772043/image-removebg-preview_1_raaqof.png';
 
 // Feature images from local files (module imports)
 import feature1Image from './feature 1.png';
