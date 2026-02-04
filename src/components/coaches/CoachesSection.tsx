@@ -25,7 +25,7 @@ export function CoachesSection() {
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Expert <span className="text-[#d4af37]">Network</span></h2>
           <p className="text-lg text-[#b0b0b0] max-w-3xl mx-auto leading-relaxed">
-            Connect with elite athletes, world-class coaches, and premium training facilities across India.
+            Connect with Elite athletes, world-class coaches, and premium training facilities across India.
           </p>
         </motion.div>
 
@@ -41,7 +41,7 @@ export function CoachesSection() {
           </div>
           <h3 className="text-2xl md:text-3xl font-bold text-white mb-4">Coming Soon</h3>
           <p className="text-[#b0b0b0] text-center max-w-xl mb-2">
-            Our Expert Network — athletes, coaches, and gyms — will be available here soon.
+            Our Expert Network — Athletes, Coaches, and Gyms — will be available here soon.
           </p>
           <p className="text-[#808080] text-sm">
             Want to join when we launch? <a href="#contact" className="text-[#d4af37] hover:underline font-medium">Get in touch</a>.

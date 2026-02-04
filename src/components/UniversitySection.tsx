@@ -18,7 +18,11 @@ export function UniversitySection() {
           className="text-center mb-16"
         >
           <Building2 className="w-16 h-16 text-[#d4af37] mx-auto mb-6" />
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Universities & <span className="text-[#d4af37]">Colleges</span></h2>
+          <h2 className="text-4xl md:text-5xl font-black mb-6">
+            <span className="text-[#d4af37]">Universities</span>{' '}
+            <span className="text-white">&</span>{' '}
+            <span className="text-[#d4af37]">Colleges</span>
+          </h2>
           <p className="text-lg text-[#b0b0b0] max-w-3xl mx-auto">
             Host a Fight Club Championship at your campus and become part of India's elite strength sports movement.
           </p>
@@ -38,7 +42,7 @@ export function UniversitySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ delay: i * 0.1 }}
-              className="bg-linear-to-br from-[#1a1a1a] to-[#0a0a0a] border-2 border-[#2a2a2a] hover:border-[#c41e3a] p-8 rounded-2xl text-center transition-all group"
+              className="bg-linear-to-br from-[#1a1a1a] to-[#0a0a0a] border-2 border-[#2a2a2a] hover:border-[#c41e3a] p-8 rounded-2xl text-center transition-all group after:content-['']"
             >
               <benefit.icon className="w-12 h-12 text-[#c41e3a] mx-auto mb-4 group-hover:scale-110 transition-transform" />
               <h4 className="text-white font-bold text-lg mb-2">{benefit.title}</h4>
@@ -60,7 +64,7 @@ export function UniversitySection() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="mailto:universities@fightclubchampionship.com"
+              href="mailto:thefightclubchampionship@gmail.com"
               className="inline-flex items-center justify-center gap-2 bg-linear-to-r from-[#c41e3a] to-[#8b1526] hover:from-[#d4af37] hover:to-[#b8941f] text-white px-10 py-4 rounded-xl font-bold text-lg transition-all shadow-lg shadow-[#c41e3a]/30"
             >
               <Mail className="w-5 h-5" />

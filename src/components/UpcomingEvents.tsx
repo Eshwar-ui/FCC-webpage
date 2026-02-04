@@ -56,8 +56,8 @@ export function UpcomingEvents() {
           </p>
         </motion.div>
 
-        {/* Events Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Events Grid - centered */}
+        <div className="flex flex-wrap justify-center gap-6">
           {upcomingEvents.map((event, index) => (
             <motion.div
               key={event.id}
@@ -65,7 +65,7 @@ export function UpcomingEvents() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-50px' }}
               transition={{ delay: index * 0.15 }}
-              className="relative group"
+              className="relative group w-full max-w-[400px]"
             >
               <div className="relative bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] rounded-2xl overflow-hidden border-2 border-[#2a2a2a] hover:border-[#d4af37]/50 transition-all duration-300 p-6">
                 {/* Content */}

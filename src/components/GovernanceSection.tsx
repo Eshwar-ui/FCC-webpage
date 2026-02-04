@@ -22,7 +22,7 @@ const benchmarks = [
     num: '4',
     title: 'Grievance Redressal Mechanism',
     desc: 'A grievance email ID — ',
-    email: 'grievance@fightclubchampionship.com',
+    email: 'thefightclubchampionship@gmail.com',
   },
   {
     num: '5',
@@ -49,8 +49,10 @@ export function GovernanceSection() {
           className="text-center mb-16"
         >
           <Shield className="w-16 h-16 text-[#d4af37] mx-auto mb-6" />
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">
-            Governance & <span className="text-[#d4af37]">Standards</span>
+          <h2 className="text-4xl md:text-5xl font-black mb-6">
+            <span className="text-[#d4af37]">Governance</span>{' '}
+            <span className="text-white">&</span>{' '}
+            <span className="text-[#d4af37]">Standards</span>
           </h2>
           <p className="text-lg text-[#b0b0b0] max-w-3xl mx-auto leading-relaxed">
             We follow governance standards aligned with the principles of the{' '}
@@ -73,7 +75,7 @@ export function GovernanceSection() {
           >
             <Shield className="w-12 h-12 text-[#d4af37] shrink-0" />
             <div className="flex-1">
-              <h3 className="text-white font-bold text-xl mb-1">Governance Benchmarks</h3>
+              <h3 className="text-[#d4af37] font-bold text-xl mb-1">Governance Benchmarks</h3>
               <p className="text-[#808080] text-sm">Click to view all 6 benchmarks</p>
             </div>
             <motion.div

@@ -1,6 +1,6 @@
 import { motion } from 'motion/react';
 import { 
-  Phone, Mail, MapPin, Facebook, Instagram, Twitter, 
+  Phone, Mail, Facebook, Instagram, Twitter, 
   CheckCircle2
 } from 'lucide-react';
 
@@ -76,7 +76,7 @@ export function ContactFooter({
           </motion.div>
 
           {/* Contact Cards */}
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="grid md:grid-cols-2 gap-8 mb-16">
             {/* Email */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -94,14 +94,8 @@ export function ContactFooter({
                 </div>
               </div>
               <div className="space-y-2">
-                <a href="mailto:contact@fightclubchampionship.com" className="block text-[#b0b0b0] hover:text-[#d4af37] transition-colors">
-                  contact@fightclubchampionship.com
-                </a>
-                <a href="mailto:universities@fightclubchampionship.com" className="block text-[#b0b0b0] hover:text-[#d4af37] transition-colors text-sm">
-                  universities@fightclubchampionship.com
-                </a>
-                <a href="mailto:athletes@fightclubchampionship.com" className="block text-[#b0b0b0] hover:text-[#d4af37] transition-colors text-sm">
-                  athletes@fightclubchampionship.com
+                <a href="mailto:thefightclubchampionship@gmail.com" className="block text-[#b0b0b0] hover:text-[#d4af37] transition-colors">
+                  thefightclubchampionship@gmail.com
                 </a>
               </div>
             </motion.div>
@@ -130,31 +124,6 @@ export function ContactFooter({
                 <a href="tel:+919876543211" className="block text-[#b0b0b0] hover:text-[#d4af37] transition-colors text-sm">
                   +91 98765 43211 (Athlete Support)
                 </a>
-              </div>
-            </motion.div>
-
-            {/* Location */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="bg-gradient-to-br from-[#1a1a1a] to-[#0a0a0a] border-2 border-[#2a2a2a] hover:border-[#c41e3a] p-8 rounded-xl transition-all group"
-            >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="bg-gradient-to-br from-[#c41e3a] to-[#8b1526] p-3 rounded-lg group-hover:scale-110 transition-transform">
-                  <MapPin className="w-6 h-6 text-white" />
-                </div>
-                <div>
-                  <h4 className="text-white font-bold mb-1">Visit Us</h4>
-                  <p className="text-[#808080] text-sm">Head Office</p>
-                </div>
-              </div>
-              <div className="text-[#b0b0b0]">
-                <p>Fight Club Championship Pvt. Ltd.</p>
-                <p className="text-sm mt-2">3rd Floor, Dwarawati -31, Subhodaya Colony,</p>
-                <p className="text-sm">Vijaya Nagar Colony, Kukatpally,</p>
-                <p className="text-sm">Hyderabad, Telangana 500072</p>
               </div>
             </motion.div>
           </div>
@@ -418,7 +387,7 @@ export function ContactFooter({
                 </li>
                 <li>
                   <a href="#roadmap" className="text-[#b0b0b0] hover:text-[#d4af37] transition-colors text-sm flex items-center gap-1">
-                    Vision & Roadmap
+                    <span className="text-[#d4af37]">Vision</span> <span className="text-white">&</span> <span className="text-[#d4af37]">Roadmap</span>
                   </a>
                 </li>
                 <li>
@@ -440,8 +409,8 @@ export function ContactFooter({
               <ul className="space-y-3">
                 <li className="flex items-start gap-2">
                   <Mail className="w-4 h-4 text-[#c41e3a] mt-0.5 flex-shrink-0" />
-                  <a href="mailto:contact@fightclubchampionship.com" className="text-[#b0b0b0] hover:text-[#d4af37] transition-colors text-sm">
-                    contact@fightclubchampionship.com
+                  <a href="mailto:thefightclubchampionship@gmail.com" className="text-[#b0b0b0] hover:text-[#d4af37] transition-colors text-sm">
+                    thefightclubchampionship@gmail.com
                   </a>
                 </li>
                 <li className="flex items-start gap-2">
@@ -449,12 +418,6 @@ export function ContactFooter({
                   <a href="tel:+919876543210" className="text-[#b0b0b0] hover:text-[#d4af37] transition-colors text-sm">
                     +91 98765 43210
                   </a>
-                </li>
-                <li className="flex items-start gap-2">
-                  <MapPin className="w-4 h-4 text-[#c41e3a] mt-0.5 flex-shrink-0" />
-                  <span className="text-[#b0b0b0] text-sm">
-                    3rd Floor, Dwarawati -31, Subhodaya Colony, Vijaya Nagar Colony, Kukatpally, Hyderabad, Telangana 500072
-                  </span>
                 </li>
               </ul>
             </div>

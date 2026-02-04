@@ -29,7 +29,11 @@ export function VisionSection() {
           className="text-center mb-20"
         >
           <TrendingUp className="w-16 h-16 text-[#d4af37] mx-auto mb-6" />
-          <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Our <span className="text-[#d4af37]">Vision</span> & Roadmap</h2>
+          <h2 className="text-4xl md:text-5xl font-black mb-6">
+            <span className="text-[#d4af37]">Our Vision</span>{' '}
+            <span className="text-white">&</span>{' '}
+            <span className="text-[#d4af37]">Roadmap</span>
+          </h2>
           <p className="text-lg text-[#b0b0b0] max-w-3xl mx-auto">
             Our journey to build India's most comprehensive strength sports ecosystem, rooted in excellence and discipline.
           </p>
@@ -83,10 +87,10 @@ export function VisionSection() {
             <div className="relative z-20 space-y-12">
 
             {[
-              { phase: '01', title: 'University Championships', status: 'CURRENT', desc: 'Establishing championships at individual universities across India.', color: '#d4af37' },
-              { phase: '02', title: 'Inter-University Meets', status: 'PLANNED', desc: 'Regional championships bringing together top athletes.', color: '#d4af37' },
-              { phase: '03', title: 'State-Level Championships', status: 'VISION', desc: 'Crowning the strongest athletes from each state.', color: '#d4af37' },
-              { phase: '04', title: 'National Platform', status: 'LONG-TERM', desc: 'National championships and international representation.', color: '#d4af37' }
+              { phase: '01', title: 'University Championships', status: 'CURRENT', desc: 'Establishing championships at individual universities across India.', titleColor: '#d4af37' },
+              { phase: '02', title: 'Inter-University Meets', status: 'PLANNED', desc: 'Regional championships bringing together top athletes.', titleColor: '#c41e3a' },
+              { phase: '03', title: 'State-Level Championships', status: 'VISION', desc: 'Crowning the strongest athletes from each state.', titleColor: '#d4af37' },
+              { phase: '04', title: 'National Platform', status: 'LONG-TERM', desc: 'National championships and international representation.', titleColor: '#c41e3a' }
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -116,7 +120,7 @@ export function VisionSection() {
                 >
                   <div className="flex items-center gap-2 mb-2">
                     <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-[#d4af37]/20 text-[#d4af37] border border-[#d4af37]/20">{item.status}</span>
-                    <h4 className="text-white font-bold">{item.title}</h4>
+                    <h4 className="font-bold" style={{ color: item.titleColor }}>{item.title}</h4>
                   </div>
                   <p className="text-sm text-[#808080]">{item.desc}</p>
                 </motion.div>
@@ -150,10 +154,10 @@ export function VisionSection() {
             <div className="relative z-20">
 
             {[
-              { phase: '01', title: 'University Championships', status: 'CURRENT', desc: 'Establishing championships at individual universities across India. Building campus-level strength sports culture.', side: 'left' },
-              { phase: '02', title: 'Inter-University Meets', status: 'PLANNED', desc: 'Regional championships bringing together top athletes from multiple universities. Raising competitive standards.', side: 'right' },
-              { phase: '03', title: 'State-Level Championships', status: 'VISION', desc: 'State championships crowning the strongest athletes from each region. Building pathway to professional sports.', side: 'left' },
-              { phase: '04', title: 'National Platform', status: 'LONG-TERM', desc: 'National Championships and international representation. Establishing India as a powerhouse in strength sports.', side: 'right' }
+              { phase: '01', title: 'University Championships', status: 'CURRENT', desc: 'Establishing championships at individual universities across India. Building campus-level strength sports culture.', side: 'left', titleColor: '#d4af37' },
+              { phase: '02', title: 'Inter-University Meets', status: 'PLANNED', desc: 'Regional championships bringing together top athletes from multiple universities. Raising competitive standards.', side: 'right', titleColor: '#c41e3a' },
+              { phase: '03', title: 'State-Level Championships', status: 'VISION', desc: 'State championships crowning the strongest athletes from each region. Building pathway to professional sports.', side: 'left', titleColor: '#d4af37' },
+              { phase: '04', title: 'National Platform', status: 'LONG-TERM', desc: 'National Championships and international representation. Establishing India as a powerhouse in strength sports.', side: 'right', titleColor: '#c41e3a' }
             ].map((item, i) => (
               <motion.div
                 key={i}
@@ -171,7 +175,7 @@ export function VisionSection() {
                 >
                   <div className={`flex items-center gap-3 mb-4 ${item.side === 'left' ? 'justify-end' : 'justify-start'}`}>
                     {item.side === 'right' && <div className="bg-[#d4af37]/10 text-[#d4af37] border border-[#d4af37]/30 px-3 py-1 rounded-full text-[10px] font-black tracking-widest uppercase">{item.status}</div>}
-                    <h3 className="text-xl font-black text-white">{item.title}</h3>
+                    <h3 className="text-xl font-black" style={{ color: item.titleColor }}>{item.title}</h3>
                     {item.side === 'left' && <div className="bg-[#d4af37]/10 text-[#d4af37] border border-[#d4af37]/30 px-3 py-1 rounded-full text-[10px] font-black tracking-widest uppercase">{item.status}</div>}
                   </div>
                   <p className="text-[#b0b0b0] text-sm leading-relaxed font-medium">{item.desc}</p>
@@ -221,7 +225,7 @@ export function VisionSection() {
           </p>
           <div className="bg-black/40 border border-[#d4af37]/20 rounded-2xl p-8 max-w-2xl mx-auto backdrop-blur-sm">
             <p className="text-white font-bold text-xl md:text-2xl leading-relaxed">
-              We plan to introduce – <span className="text-[#d4af37]">Wrestling</span>, <span className="text-[#d4af37]">Arm wrestling</span>, and combat sports especially – <span className="text-[#c41e3a]">MMA (Mixed Martial Arts)</span>
+              We plan to introduce – <span className="text-[#d4af37]">Wrestling</span>, <span className="text-[#e8a317]">Arm wrestling</span>, and combat sports especially – <span className="text-[#c41e3a]">MMA (Mixed Martial Arts)</span>
             </p>
           </div>
         </motion.div>

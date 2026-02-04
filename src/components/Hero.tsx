@@ -106,7 +106,7 @@ export function Hero() {
                   className="absolute inset-0 text-[#ffd700] font-black pointer-events-none select-none"
                   aria-hidden
                 >
-                  STRONGEST WOMEN & MEN
+                  <span className="text-[#d4af37]">STRONGEST WOMEN </span><span className="text-white">&</span><span className="text-[#d4af37]"> MEN</span>
                 </motion.span>
 
                 {/* Shimmering Text with "Voltage Glitch" movement */}
@@ -124,7 +124,7 @@ export function Hero() {
                     filter: { duration: 0.1, repeat: Infinity, repeatDelay: 2.5, times: [0, 0.2, 0.4, 0.6, 1] }
                   }}
                 >
-                  STRONGEST WOMEN & MEN
+                  <span className="text-[#d4af37]">STRONGEST WOMEN </span><span className="text-white">&</span><span className="text-[#d4af37]"> MEN</span>
                 </motion.span>
               </span>
               <span className="block text-white text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mt-2 sm:mt-3 tracking-wider px-2">

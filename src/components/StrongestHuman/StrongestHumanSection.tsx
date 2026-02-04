@@ -98,7 +98,7 @@ export function StrongestHumanSection({ onSelectEvent }: StrongestHumanSectionPr
           <div className="bg-linear-to-br from-[#1a1a1a] to-[#0a0a0a] border-2 border-[#c41e3a] rounded-2xl p-8 md:p-12 shadow-2xl">
             <div className="flex flex-col md:flex-row items-center gap-6 mb-10 text-center md:text-left">
               <GraduationCap className="w-16 h-16 text-[#d4af37]" />
-              <h3 className="text-3xl font-black text-[#d4af37]">Why University-Level Championships Matter?</h3>
+              <h3 className="text-3xl font-black text-[#d4af37]">Why College / University-Level Championships Matter?</h3>
             </div>
 
             <div className="grid md:grid-cols-2 gap-8 text-[#b0b0b0]">
@@ -111,7 +111,7 @@ export function StrongestHumanSection({ onSelectEvent }: StrongestHumanSectionPr
                 <div key={i} className="flex items-start gap-4">
                   <CheckCircle2 className="w-6 h-6 text-[#c41e3a] shrink-0 mt-1" />
                   <div>
-                    <h4 className="text-white font-bold text-lg mb-2">{item.title}</h4>
+                    <h4 className="text-white font-bold text-lg mb-2 underline decoration-[#c41e3a] decoration-2 underline-offset-2">{item.title}</h4>
                     <p className="text-sm leading-relaxed">{item.desc}</p>
                   </div>
                 </div>

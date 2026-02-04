@@ -382,10 +382,9 @@ export const socialLinks = {
 // CONTACT INFORMATION
 // ============================================================================
 export const contactInfo = {
-  email: 'info@strongestmanchampionship.com',
+  email: 'thefightclubchampionship@gmail.com',
   phone: '+91-XXXXXXXXXX',
-  address: 'Championship Venue, City, Country',
-  supportEmail: 'support@strongestmanchampionship.com'
+  supportEmail: 'thefightclubchampionship@gmail.com'
 };
 
 // ============================================================================

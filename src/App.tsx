@@ -1,6 +1,7 @@
 import { useState, useEffect, lazy, Suspense } from 'react';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
+import { SocialFab } from './components/SocialFab';
 import Lenis from 'lenis';
 
 // Lazy load sections below the Hero for better initial performance
@@ -145,6 +146,7 @@ export default function App() {
   return (
     <div className="bg-[#0a0a0a] text-white selection:bg-[#d4af37] selection:text-black relative">
       <Navbar />
+      <SocialFab />
       
       <main>
         <Hero />
