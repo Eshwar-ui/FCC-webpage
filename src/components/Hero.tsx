@@ -147,7 +147,7 @@ export function Hero() {
               transition={{ duration: 0.8, delay: 1 }}
               className="text-base sm:text-lg md:text-xl lg:text-2xl text-white/90 mt-4 sm:mt-6 px-2 leading-relaxed"
             >
-              Building strength, discipline, and competitive spirit<br className="hidden sm:block" /> in Indian campuses
+              Building Strength, Discipline, & Competitive Spirit<br className="hidden sm:block" /> In Indian Campuses
             </motion.p>
             <motion.p
               initial={{ opacity: 0 }}
@@ -155,9 +155,9 @@ export function Hero() {
               transition={{ duration: 0.5, delay: 0.5 }}
               className="relative text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-black mt-4 sm:mt-6 px-2"
             >
-              <span className="hidden md:block absolute inset-0 text-[#d4af37] blur-[2px] opacity-70">Will you rise to the challenge?</span>
+              <span className="hidden md:block absolute inset-0 text-[#d4af37] blur-[2px] opacity-70">Will You Rise To The Challenge?</span>
               <span className="relative text-[#ffd700] drop-shadow-[0_2px_8px_rgba(0,0,0,1)] md:drop-shadow-[0_0_25px_rgba(255,215,0,0.9),0_4px_12px_rgba(0,0,0,1),0_0_0_4px_rgba(0,0,0,0.9)]">
-                Will you rise to the challenge?
+                Will You Rise To The Challenge?
               </span>
             </motion.p>
 
